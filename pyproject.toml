@@ -1,0 +1,53 @@
+[project]
+name = "hackathon"
+version = "0.1.0"
+license = {file = "LICENSE"}
+description = "Lounge Meetup Hackathon"
+readme = "README.md"
+requires-python = "==3.12.9"
+
+authors =  [
+    {name = "Oliver Angelil", email = "oliver@ishango.ai"},
+]
+
+dependencies = [
+    "numpy==2.2.2",
+    "pyright==1.1.394",
+    "pytest==8.3.4",
+    "ruff==0.9.5",
+    "scipy==1.15.1",
+    "google-genai==1.0.0",
+]
+
+[project.urls]
+Homepage = "https://ishango.ai/"
+
+[project.scripts]
+hackathon = "hackathon.source:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-vv"
+
+[tool.pyright]
+exclude = []
+typeCheckingMode = "standard"
+colorOutput = true
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "C90"]
+preview = true
+
+#this is a replacement for black. not sure whether to use it
+#[tool.ruff.format]
+
+# required for a src and test layout
+[tool.uv]
+package = true
