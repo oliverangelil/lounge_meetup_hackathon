@@ -1,8 +1,8 @@
-from hackathon.model import model
+from hackathon.models import first_model
 
 
 def main():
-    model()
+    first_model()
 
 if __name__ == '__main__':
     main()
